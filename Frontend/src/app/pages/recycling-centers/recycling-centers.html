@@ -1,0 +1,161 @@
+<nav class="navbar glass-navbar">
+  <div class="nav-left">
+    <div class="logo-wrapper">
+      <img src="images/logo.png" />
+    </div>
+
+    <h2>GreenLoop</h2>
+  </div>
+
+  <div class="nav-links">
+    <a routerLink="/user-dashboard" fragment="top-section"> Dashboard </a>
+
+    <a routerLink="/user-dashboard" fragment="analytics-section"> Analytics </a>
+
+    <a routerLink="/user-dashboard" fragment="leaderboard-section"> Leaderboard </a>
+
+    <a routerLink="/challenges"> Challenges </a>
+
+    <a routerLink="/challenges" fragment="your-progress-section"> Your Progress </a>
+
+    <a routerLink="/recycling-centers" routerLinkActive="active-link"> Centers </a>
+  </div>
+
+  <button class="signout-btn" routerLink="/">Sign Out</button>
+</nav>
+
+<div class="recycling-page">
+  <!-- HERO -->
+
+  <section class="hero-card">
+    <div class="hero-left">
+      <span class="hero-tag"> Smart GPS Recycling </span>
+
+      <h1>Nearby Recycling Centers</h1>
+
+      <p>
+        Enable your location to discover nearby e-waste collectors, scrap dealers, compost hubs, and
+        smart recycling centers.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="primary-btn" (click)="getUserLocation()">Enable GPS</button>
+
+<button
+class="secondary-btn"
+(click)="scrollToNearby()">
+
+    Explore Nearby
+
+</button>
+      </div>
+    </div>
+
+    <div class="hero-icon">♻️</div>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="filters-section">
+    <button
+      class="filter-btn"
+      [class.active-filter]="currentFilter === 'All'"
+      (click)="filterMarkers('All')"
+    >
+      All
+    </button>
+
+    <button
+      class="filter-btn"
+      [class.active-filter]="currentFilter === 'E-Waste'"
+      (click)="filterMarkers('E-Waste')"
+    >
+      E-Waste
+    </button>
+
+    <button
+      class="filter-btn"
+      [class.active-filter]="currentFilter === 'Scrap'"
+      (click)="filterMarkers('Scrap')"
+    >
+      Scrap
+    </button>
+
+    <button
+      class="filter-btn"
+      [class.active-filter]="currentFilter === 'Organic'"
+      (click)="filterMarkers('Organic')"
+    >
+      Organic
+    </button>
+
+    <button
+      class="filter-btn"
+      [class.active-filter]="currentFilter === 'Plastic'"
+      (click)="filterMarkers('Plastic')"
+    >
+      Plastic
+    </button>
+  </section>
+
+  <!-- MAP -->
+
+  <section class="map-card">
+    <div class="map-top">
+      <div>
+        <h2>Live Eco Map</h2>
+
+        <p>Smart recycling points around your area.</p>
+      </div>
+
+      <span class="location-status">
+        {{ locationStatus }}
+      </span>
+    </div>
+
+    <div class="map-wrapper">
+      <div id="map"></div>
+    </div>
+  </section>
+
+  <!-- CENTERS -->
+
+  <section
+class="section-title"
+id="nearby-centers-section">
+    <h2>Nearby Centers</h2>
+
+    <p>Recommended eco collection points near you.</p>
+  </section>
+
+  <section class="centers-grid">
+    <div class="center-card" *ngFor="let center of centers">
+      <div class="card-top">
+        <span class="type-tag">
+          {{ center.type }}
+        </span>
+
+        <span class="distance"> 📍 {{ center.distance }} </span>
+      </div>
+
+      <h3>{{ center.name }}</h3>
+
+      <p>{{ center.description }}</p>
+
+      <div class="waste-tags">
+        <span *ngFor="let item of center.items">
+          {{ item }}
+        </span>
+      </div>
+
+      <button class="direction-btn" (click)="openDirections(center)">Open Directions</button>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+
+  <section class="tips-card">
+    <span class="tips-title"> Recycling Tip </span>
+
+    <h3>Separate batteries before disposing electronics.</h3>
+  </section>
+</div>

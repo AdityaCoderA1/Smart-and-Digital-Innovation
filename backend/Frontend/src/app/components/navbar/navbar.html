@@ -1,0 +1,64 @@
+<nav class="fixed top-0 left-0 w-full z-50 px-6 py-4">
+
+    <div class="
+        max-w-7xl mx-auto
+        flex items-center justify-between
+
+        bg-white/20
+        backdrop-blur-lg
+        border border-white/30
+        shadow-xl
+
+        rounded-3xl
+        px-8 py-4
+    ">
+
+        <!-- Logo -->
+        <div class="text-3xl font-bold text-[#1F6F5F]">
+            GreenLoop
+        </div>
+
+        <!-- Links -->
+        <div class="hidden md:flex items-center gap-8 font-medium text-[#1F6F5F]">
+
+            <a routerLink="/" class="hover:text-[#2FA084] transition duration-300">
+                Home
+            </a>
+
+            <a routerLink="/upload" class="hover:text-[#2FA084] transition duration-300">
+                Upload
+            </a>
+
+            <a routerLink="/dashboard" class="hover:text-[#2FA084] transition duration-300">
+                Dashboard
+            </a>
+
+            <a routerLink="/recycling-centers" class="hover:text-[#2FA084] transition duration-300">
+                Centers
+            </a>
+
+            <a routerLink="/challenges" class="hover:text-[#2FA084] transition duration-300">
+                Challenges
+            </a>
+
+        </div>
+
+        <!-- Auth Button -->
+        <button
+            routerLink="/auth"
+            class="
+                bg-[#2FA084]
+                text-white
+                px-5 py-2
+                rounded-2xl
+                hover:bg-[#1F6F5F]
+                transition duration-300
+                shadow-lg
+            "
+        >
+            Login
+        </button>
+
+    </div>
+
+</nav>

@@ -1,0 +1,953 @@
+<!-- NAVBAR -->
+
+<nav class="fixed top-0 left-0 w-full z-[999] px-4 pt-5">
+  <div
+    class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 rounded-[28px] border border-white/10 bg-black/20 backdrop-blur-2xl shadow-[0_10px_40px_rgba(0,0,0,0.25)] transition-all duration-500"
+  >
+    <!-- LOGO -->
+
+    <div class="flex items-center gap-4 group cursor-pointer">
+      <div
+        class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl group-hover:rotate-12 group-hover:scale-110 transition duration-500"
+      >
+        <img src="images/logo.png" alt="GreenLoop logo" />
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-black leading-none">GreenLoop</h2>
+
+        <p class="mt-1 text-[10px] tracking-[4px] text-[#6FCF97]">SMART RECYCLING</p>
+      </div>
+    </div>
+
+    <!-- NAV LINKS -->
+
+    <div class="hidden lg:flex items-center gap-10">
+      <a
+        href="#features"
+        class="text-sm text-gray-300 hover:text-[#6FCF97] hover:-translate-y-1 transition-all duration-300"
+      >
+        Features
+      </a>
+
+      <a
+        href="#analytics"
+        class="text-sm text-gray-300 hover:text-[#6FCF97] hover:-translate-y-1 transition-all duration-300"
+      >
+        Analytics
+      </a>
+
+      <a
+        href="#community"
+        class="text-sm text-gray-300 hover:text-[#6FCF97] hover:-translate-y-1 transition-all duration-300"
+      >
+        Community
+      </a>
+
+      <a
+        href="#footer"
+        class="text-sm text-gray-300 hover:text-[#6FCF97] hover:-translate-y-1 transition-all duration-300"
+      >
+        Contact
+      </a>
+    </div>
+
+    <!-- RIGHT BUTTONS -->
+
+    <div class="flex items-center gap-4">
+      <button
+        routerLink="/auth"
+        class="hidden md:block px-5 py-3 rounded-2xl border border-white/10 bg-white/5 text-sm font-medium hover:border-[#2FA084] hover:bg-white/10 hover:-translate-y-1 transition-all duration-300"
+      >
+        Sign In
+      </button>
+
+      <button
+        routerLink="/auth"
+        class="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#2FA084] to-[#6FCF97] text-black text-sm font-black hover:scale-105 hover:shadow-[0_0_25px_rgba(111,207,151,0.45)] transition-all duration-300"
+      >
+        Get Started
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+
+<section
+id="top-section"
+
+class="relative h-screen overflow-hidden pt-32">
+  <!-- VIDEO -->
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+    <source src="/videos/video-overlay1.mp4" type="video/mp4" />
+  </video>
+
+  <!-- DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <!-- GREEN OVERLAY -->
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-[#1F6F5F]/30 via-black/40 to-[#2FA084]/20"
+  ></div>
+
+  <!-- HERO CONTENT -->
+  <div class="relative z-10 h-full flex items-center px-6">
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- LEFT -->
+
+        <div class="reveal">
+          <p class="text-[#6FCF97] uppercase tracking-[5px] text-xs font-semibold mb-5">
+            AI Powered Sustainability
+          </p>
+
+          <h1 class="text-5xl lg:text-7xl font-black leading-[0.95]">
+            Smart Recycling
+
+            <span class="text-[#6FCF97]"> For The </span>
+
+            Future
+          </h1>
+
+          <p class="mt-6 text-lg text-gray-300 leading-relaxed max-w-xl">
+            AI-powered waste classification, eco analytics, sustainability challenges, and
+            intelligent recycling guidance.
+          </p>
+
+          <!-- BUTTONS -->
+
+          <div class="mt-8 flex gap-4">
+            <button
+              routerLink="/auth"
+              class="bg-[#2FA084] hover:bg-[#1F6F5F] px-7 py-3 rounded-2xl font-bold transition duration-300 hover:scale-105" style="cursor: pointer;"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="reveal flex justify-center">
+          <div
+            class="bg-white/10 backdrop-blur-2xl border border-white/10 rounded-[35px] p-8 w-full max-w-md shadow-[0_0_60px_rgba(47,160,132,0.2)]"
+          >
+            <div class="flex items-center gap-5">
+              <div
+                class="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#2FA084] to-[#6FCF97] flex items-center justify-center text-5xl"
+              >
+                ♻️
+              </div>
+
+              <div>
+                <p class="text-[#6FCF97] uppercase tracking-[4px] text-xs font-semibold">
+                  Smart Sustainability
+                </p>
+
+                <h2 class="mt-2 text-3xl font-black leading-tight">AI Waste Intelligence</h2>
+              </div>
+            </div>
+
+            <p class="mt-6 text-gray-300 leading-relaxed">
+              Transform waste into measurable environmental impact through intelligent recycling
+              systems and AI analytics.
+            </p>
+
+            <!-- STATS -->
+
+            <div class="mt-8 grid grid-cols-2 gap-4">
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                <h3 class="text-3xl font-black text-[#6FCF97]">98%</h3>
+
+                <p class="text-sm text-gray-300 mt-2">AI Accuracy</p>
+              </div>
+
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+                <h3 class="text-3xl font-black text-[#6FCF97]">24/7</h3>
+
+                <p class="text-sm text-gray-300 mt-2">Smart Monitoring</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM FADE -->
+
+  <div
+    class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#041915] to-transparent"
+  ></div>
+</section>
+
+<!-- FEATURES -->
+
+<section id="features" class="bg-[#041915] px-6 py-32">
+  <div class="max-w-7xl mx-auto">
+    <!-- TITLE -->
+
+    <div class="text-center reveal">
+      <p class="text-[#6FCF97] uppercase tracking-[4px] text-xs font-semibold">Platform Features</p>
+
+      <h2 class="mt-4 text-4xl lg:text-5xl font-black">Intelligent Recycling Ecosystem</h2>
+    </div>
+
+    <!-- FEATURE CARDS -->
+
+    <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- CARD -->
+
+      <div
+        class="reveal bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 hover:-translate-y-2 hover:border-[#2FA084] transition duration-300"
+      >
+        <div class="flex flex-col items-center justify-center text-center">
+          <div
+            class="w-[70px] h-[70px] flex items-center justify-center bg-white/5 border border-white/10 rounded-[20px] overflow-hidden"
+          >
+            <img
+              src="images/ai-classification-img.png"
+              alt="AI Classification"
+              class="w-[50px] h-[50px] object-contain"
+            />
+          </div>
+
+          <h3 class="mt-5 text-xl font-bold">AI Classification</h3>
+        </div>
+
+        <p class="mt-3 text-gray-300 text-sm leading-resmatlaxed">
+          Detect recyclable materials instantly using AI recognition.
+        </p>
+      </div>
+
+      <!-- CARD -->
+
+      <div
+        class="reveal bg-[#1F6F5F]/20 backdrop-blur-xl border border-[#2FA084]/20 rounded-3xl p-6 hover:-translate-y-2 hover:border-[#6FCF97] transition duration-300"
+      >
+        <div class="flex flex-col items-center justify-center text-center">
+          <div
+            class="w-[70px] h-[70px] flex items-center justify-center bg-white/5 border border-white/10 rounded-[20px] overflow-hidden"
+          >
+            <img
+              src="images/smart-analytics-img.png"
+              alt="Smart Analytics"
+              class="w-[50px] h-[50px] object-contain"
+            />
+          </div>
+          <h3 class="mt-5 text-xl font-bold">Smart Analytics</h3>
+        </div>
+
+        <p class="mt-3 text-gray-300 text-sm leading-relaxed">
+          Track sustainability performance visually in real-time.
+        </p>
+      </div>
+
+      <!-- CARD -->
+
+      <div
+        class="reveal bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 hover:-translate-y-2 hover:border-[#2FA084] transition duration-300"
+      >
+        <div class="flex flex-col items-center justify-center text-center">
+          <div
+            class="w-[70px] h-[70px] flex items-center justify-center bg-white/5 border border-white/10 rounded-[20px] overflow-hidden"
+          >
+            <img
+              src="images/eco-challenges-img.png"
+              alt="Eco Challenges"
+              class="w-[50px] h-[50px] object-contain"
+            />
+          </div>
+
+          <h3 class="mt-5 text-xl font-bold">Eco Challenges</h3>
+        </div>
+
+        <p class="mt-3 text-gray-300 text-sm leading-relaxed">
+          Participate in environmental challenges and earn rewards.
+        </p>
+      </div>
+
+      <!-- CARD -->
+
+      <div
+        class="reveal bg-[#EEEEEE]/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 hover:-translate-y-2 hover:border-[#6FCF97] transition duration-300"
+      >
+        <div class="flex flex-col items-center justify-center text-center">
+          <div
+            class="w-[70px] h-[70px] flex items-center justify-center bg-white/5 border border-white/10 rounded-[20px] overflow-hidden"
+          >
+            <img
+              src="markers/red-gps.png"
+              alt="Recycling Centers"
+              class="w-[50px] h-[50px] object-contain"
+            />
+          </div>
+
+          <h3 class="mt-5 text-xl font-bold">Recycling Centers</h3>
+        </div>
+
+        <p class="mt-3 text-gray-300 text-sm leading-relaxed">
+          Find nearby recycling facilities and disposal guidance.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<!-- HERO SECTION -->
+
+<section
+id="top-section"
+
+class="relative h-screen overflow-hidden pt-32">
+  <!-- GLOW -->
+
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[#2FA084]/10 blur-[180px]"
+  ></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <!-- TITLE -->
+
+    <div class="text-center reveal">
+      <p class="text-[#6FCF97] uppercase tracking-[5px] text-xs font-semibold">User Journey</p>
+
+      <h2 class="mt-4 text-4xl lg:text-6xl font-black">How The Platform Works</h2>
+
+      <p class="mt-6 max-w-3xl mx-auto text-gray-300 text-lg leading-relaxed">
+        Upload waste images, let AI classify materials, receive recycling guidance, and earn
+        sustainability rewards.
+      </p>
+    </div>
+
+    <!-- STEPS -->
+
+    <div class="mt-24 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <!-- STEP -->
+
+      <div class="reveal text-center">
+        <div
+          class="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-[#2FA084] to-[#6FCF97] flex items-center justify-center text-5xl shadow-[0_0_40px_rgba(47,160,132,0.35)] hover:scale-110 transition duration-500"
+        >
+          <img src="images/upload-photo-img.png" alt="Upload" class="w-20 h-20 object-contain" />
+        </div>
+
+        <p class="mt-6 text-[#6FCF97] tracking-[4px] text-xs font-black">STEP 01</p>
+
+        <h3 class="mt-3 text-3xl font-black">Upload Waste</h3>
+
+        <p class="mt-5 text-gray-300 leading-relaxed">
+          Users upload recyclable or non-recyclable waste images directly into the platform.
+        </p>
+      </div>
+
+      <!-- STEP -->
+
+      <div class="reveal text-center">
+        <div
+          class="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-[#2FA084] to-[#6FCF97] flex items-center justify-center text-5xl shadow-[0_0_40px_rgba(47,160,132,0.35)] hover:scale-110 transition duration-500"
+        >
+          <img
+src="images/ai-guidance-img.png"
+alt="Upload"
+class="w-20 h-20 object-contain">
+        </div>
+
+        <p class="mt-6 text-[#6FCF97] tracking-[4px] text-xs font-black">STEP 02</p>
+
+        <h3 class="mt-3 text-3xl font-black">AI Detection</h3>
+
+        <p class="mt-5 text-gray-300 leading-relaxed">
+          AI intelligently identifies recyclable materials from uploaded images.
+        </p>
+      </div>
+
+      <!-- STEP -->
+
+      <div class="reveal text-center">
+        <div
+          class="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-[#2FA084] to-[#6FCF97] flex items-center justify-center text-5xl shadow-[0_0_40px_rgba(47,160,132,0.35)] hover:scale-110 transition duration-500"
+        >
+          <img
+src="images/ai-classification-img.png"
+alt="Upload"
+class="w-20 h-20 object-contain">
+        </div>
+
+        <p class="mt-6 text-[#6FCF97] tracking-[4px] text-xs font-black">STEP 03</p>
+
+        <h3 class="mt-3 text-3xl font-black">Smart Guidance</h3>
+
+        <p class="mt-5 text-gray-300 leading-relaxed">
+          Receive recycling instructions, disposal methods, and center recommendations.
+        </p>
+      </div>
+
+      <!-- STEP -->
+
+      <div class="reveal text-center">
+        <div
+          class="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-[#2FA084] to-[#6FCF97] flex items-center justify-center text-5xl shadow-[0_0_40px_rgba(47,160,132,0.35)] hover:scale-110 transition duration-500"
+        >
+          🏆
+        </div>
+
+        <p class="mt-6 text-[#6FCF97] tracking-[4px] text-xs font-black">STEP 04</p>
+
+        <h3 class="mt-3 text-3xl font-black">Earn Rewards</h3>
+
+        <p class="mt-5 text-gray-300 leading-relaxed">
+          Track environmental impact, earn eco points, and join sustainability challenges.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYTICS SECTION -->
+
+<section id="analytics" class="relative overflow-hidden bg-[#071A17] px-6 py-36">
+  <!-- BACKGROUND GLOW -->
+
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[#2FA084]/10 blur-[180px]"
+  ></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+    <!-- LEFT CONTENT -->
+
+    <div class="reveal">
+      <p class="text-[#6FCF97] uppercase tracking-[5px] text-xs font-semibold">
+        Live Sustainability Analytics
+      </p>
+
+      <h2 class="mt-5 text-5xl lg:text-6xl font-black leading-tight">
+        Smart
+
+        <span class="text-[#6FCF97]"> Dashboard </span>
+
+        Experience
+      </h2>
+
+      <p class="mt-8 text-gray-300 text-lg leading-relaxed max-w-2xl">
+        Visualize recycling activity, monitor AI waste detection, explore sustainability reports,
+        and track eco-friendly actions through an intelligent analytics system.
+      </p>
+
+      <!-- DASHBOARD PREVIEW FEATURES -->
+
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <!-- CARD -->
+
+        <div
+          class="group relative overflow-hidden bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 hover:-translate-y-2 hover:border-[#2FA084] transition duration-500"
+        >
+          <!-- GLOW -->
+
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-[#2FA084]/10 to-transparent"
+          ></div>
+
+          <div class="relative z-10">
+            <div
+class="w-[72px] h-[72px]
+       flex items-center justify-center
+       bg-white/5 border border-white/10
+       rounded-2xl overflow-hidden">
+
+    <img
+    src="images/smart-analytics-img.png"
+    alt="Visual Reports"
+    class="w-[52px] h-[52px] object-contain">
+
+</div>
+
+            <h3 class="mt-5 text-2xl font-bold">Visual Reports</h3>
+
+            <p class="mt-3 text-gray-300 leading-relaxed">
+              Interactive graphs and analytics showing recycling trends and sustainability growth.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div
+          class="group relative overflow-hidden bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 hover:-translate-y-2 hover:border-[#6FCF97] transition duration-500"
+        >
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-[#6FCF97]/10 to-transparent"
+          ></div>
+
+          <div class="relative z-10">
+            <div
+class="w-[72px] h-[72px]
+       flex items-center justify-center
+       bg-white/5 border border-white/10
+       rounded-2xl overflow-hidden">
+
+    <img
+    src="images/ai-monitoring-img.png"
+    alt="AI Monitoring"
+    class="w-[52px] h-[52px] object-contain">
+
+</div>
+
+            <h3 class="mt-5 text-2xl font-bold">AI Monitoring</h3>
+
+            <p class="mt-3 text-gray-300 leading-relaxed">
+              Monitor intelligent waste classification and AI-based sustainability insights in real
+              time.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div
+          class="group relative overflow-hidden bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 hover:-translate-y-2 hover:border-[#2FA084] transition duration-500"
+        >
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-[#2FA084]/10 to-transparent"
+          ></div>
+
+          <div class="relative z-10">
+            <div
+class="w-[72px] h-[72px]
+       flex items-center justify-center
+       bg-white/5 border border-white/10
+       rounded-2xl overflow-hidden">
+
+    <img
+    src="images/eco-challenges-img.png"
+    alt="Recycling Insights"
+    class="w-[52px] h-[52px] object-contain">
+
+</div>
+
+            <h3 class="mt-5 text-2xl font-bold">Recycling Insights</h3>
+
+            <p class="mt-3 text-gray-300 leading-relaxed">
+              Analyze recyclable and non-recyclable waste distribution with smart visual tracking.
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div
+          class="group relative overflow-hidden bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 hover:-translate-y-2 hover:border-[#6FCF97] transition duration-500"
+        >
+          <div
+            class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-[#6FCF97]/10 to-transparent"
+          ></div>
+
+          <div class="relative z-10">
+            <div
+class="w-[72px] h-[72px]
+       flex items-center justify-center
+       bg-white/5 border border-white/10
+       rounded-2xl overflow-hidden">
+
+    <img
+    src="images/sustainability-tracking-img.png"
+    alt="Sustainability Tracking"
+    class="w-[52px] h-[52px] object-contain">
+
+</div>
+
+            <h3 class="mt-5 text-2xl font-bold">Sustainability Tracking</h3>
+
+            <p class="mt-3 text-gray-300 leading-relaxed">
+              Explore eco-friendly actions, environmental impact, and user sustainability progress.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+
+    <div class="reveal relative">
+      <!-- MAIN GLASS CARD -->
+
+      <div
+        class="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] overflow-hidden p-6 shadow-[0_0_60px_rgba(47,160,132,0.15)]"
+      >
+        <!-- HEADER -->
+
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-[#6FCF97] text-sm tracking-[3px] uppercase">Analytics Preview</p>
+
+            <h3 class="mt-2 text-3xl font-black">Smart Dashboard</h3>
+          </div>
+
+          <!-- ICON -->
+
+          <div
+            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2FA084] to-[#6FCF97] flex items-center justify-center text-3xl shadow-[0_0_30px_rgba(47,160,132,0.35)]"
+          >
+            📊
+          </div>
+        </div>
+
+        <!-- IMAGE PREVIEW -->
+
+        <div class="mt-8 rounded-3xl overflow-hidden border border-white/10 relative">
+          <!-- PLACEHOLDER IMAGE -->
+
+          <img
+            src="/images/dashboard-preview.png"
+            alt="Analytics Dashboard"
+            class="w-full h-[340px] object-cover"
+          />
+
+          <!-- DARK OVERLAY -->
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+          ></div>
+        </div>
+
+        <!-- BOTTOM FEATURES -->
+
+        <div class="mt-8 grid grid-cols-2 gap-4">
+          <!-- LIVE ACTIVITY -->
+
+          <div
+            class="group relative overflow-hidden bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-5 hover:-translate-y-2 hover:border-[#2FA084] transition-all duration-500"
+          >
+            <!-- GLOW -->
+
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-[#2FA084]/10 to-transparent transition duration-500"
+            ></div>
+
+            <div class="relative z-10">
+              <!-- HEADER -->
+
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-[#2FA084]/20 flex items-center justify-center text-2xl"
+                >
+                  ⚡
+                </div>
+
+                <div>
+                  <h4 class="text-lg font-bold">Live Activity</h4>
+
+                  <p class="text-xs text-gray-400">Real-time user actions</p>
+                </div>
+              </div>
+
+              <!-- FEED -->
+
+              <div class="mt-5 space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="w-2 h-2 rounded-full bg-[#6FCF97] mt-2 animate-pulse"></div>
+
+                  <p class="text-sm text-gray-300 leading-relaxed">
+                    Waste image classified successfully.
+                  </p>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-2 h-2 rounded-full bg-[#2FA084] mt-2 animate-pulse"></div>
+
+                  <p class="text-sm text-gray-300 leading-relaxed">Recycling insights updated.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SMART RECOMMENDATIONS -->
+
+          <div
+            class="group relative overflow-hidden bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-5 hover:-translate-y-2 hover:border-[#6FCF97] transition-all duration-500"
+          >
+            <!-- GLOW -->
+
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-[#6FCF97]/10 to-transparent transition duration-500"
+            ></div>
+
+            <div class="relative z-10">
+              <!-- HEADER -->
+
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 rounded-2xl bg-[#6FCF97]/20 flex items-center justify-center text-2xl"
+                >
+                  ✨
+                </div>
+
+                <div>
+                  <h4 class="text-lg font-bold">Smart Suggestions</h4>
+
+                  <p class="text-xs text-gray-400">AI-powered guidance</p>
+                </div>
+              </div>
+
+              <!-- RECOMMENDATIONS -->
+
+              <div class="mt-5 space-y-3">
+                <div
+                  class="rounded-2xl bg-black/20 border border-white/5 px-4 py-3 text-sm text-gray-300 hover:bg-black/30 transition"
+                >
+                  ♻ Try separating plastic waste before upload.
+                </div>
+
+                <div
+                  class="rounded-2xl bg-black/20 border border-white/5 px-4 py-3 text-sm text-gray-300 hover:bg-black/30 transition"
+                >
+                  🌱 Nearby recycling center available.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY SECTION -->
+
+<section id="community" class="relative overflow-hidden px-6 py-36 bg-[#071A17]">
+  <!-- GLOW -->
+
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[#6FCF97]/10 blur-[180px]"
+  ></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <!-- TITLE -->
+
+    <div class="text-center max-w-4xl mx-auto reveal">
+      <p class="text-[#6FCF97] uppercase tracking-[6px] text-xs font-semibold">
+        Community & Challenges
+      </p>
+
+      <h2 class="mt-5 text-5xl lg:text-6xl font-black leading-tight">
+        Make Sustainability
+
+        <span class="text-[#6FCF97]"> Competitive </span>
+      </h2>
+
+      <p class="mt-8 text-gray-300 text-lg leading-relaxed">
+        Participate in eco challenges, unlock achievements, compete with the community, and
+        contribute towards a greener future together.
+      </p>
+    </div>
+
+    <!-- MAIN GRID -->
+
+    <div class="mt-20 grid lg:grid-cols-2 gap-10">
+      <!-- LEFT CARD -->
+
+      <div
+        class="relative overflow-hidden bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] p-8 flex flex-col gap-8 hover:-translate-y-2 transition-all duration-500"
+      >
+        <!-- GLOW -->
+
+        <div
+          class="absolute inset-0 opacity-0 hover:opacity-100 transition duration-500 bg-gradient-to-br from-[#2FA084]/10 to-transparent"
+        ></div>
+
+        <!-- HEADER -->
+
+        <div class="relative z-10 flex items-start justify-between gap-5">
+          <div>
+            <p class="text-[#6FCF97] uppercase tracking-[4px] text-xs font-semibold">
+              Weekly Eco Missions
+            </p>
+
+            <h3 class="mt-4 text-4xl lg:text-5xl font-black leading-tight">
+              Sustainability Challenges
+            </h3>
+          </div>
+
+          <!-- ICON -->
+
+          <div
+            class="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#2FA084] to-[#6FCF97] flex items-center justify-center text-4xl shadow-[0_0_35px_rgba(47,160,132,0.3)] hover:rotate-6 hover:scale-105 transition duration-500"
+          >
+            🌱
+          </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+
+        <div class="relative z-10 flex flex-col gap-5">
+          <!-- CARD -->
+
+          <div
+            class="rounded-3xl bg-black/20 border border-white/10 p-6 hover:border-[#2FA084] transition duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#2FA084]/20 flex items-center justify-center text-2xl"
+              >
+                ♻️
+              </div>
+
+              <div>
+                <h4 class="text-2xl font-bold">Daily Eco Tasks</h4>
+
+                <p class="mt-3 text-gray-300 leading-relaxed">
+                  Users complete sustainability missions, recycling activities, and eco-friendly
+                  objectives regularly.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD -->
+
+          <div
+            class="rounded-3xl bg-black/20 border border-white/10 p-6 hover:border-[#6FCF97] transition duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#6FCF97]/20 flex items-center justify-center text-2xl"
+              >
+                🏆
+              </div>
+
+              <div>
+                <h4 class="text-2xl font-bold">Unlock Eco Achievements</h4>
+
+                <p class="mt-3 text-gray-300 leading-relaxed">
+                  Earn sustainability badges, leaderboard visibility, and community recognition
+                  through participation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT CARD -->
+
+      <div
+        class="group relative overflow-hidden bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] p-10 hover:-translate-y-2 transition-all duration-500"
+      >
+        <!-- GLOW -->
+
+        <div
+          class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-[#6FCF97]/10 to-transparent"
+        ></div>
+
+        <div class="relative z-10">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-[#6FCF97] uppercase tracking-[3px] text-xs">Community Leaderboard</p>
+
+              <h3 class="mt-3 text-4xl font-black">Top Eco Users</h3>
+            </div>
+
+            <div
+              class="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#6FCF97] to-[#2FA084] flex items-center justify-center text-4xl group-hover:rotate-6 transition duration-500"
+            >
+              🏆
+            </div>
+          </div>
+
+          <!-- LEADERBOARD ITEMS -->
+
+          <div class="mt-10 space-y-5">
+            <!-- GOLD -->
+
+            <div
+              class="group flex items-start gap-5 rounded-3xl bg-black/20 border border-[#FFD700]/20 px-6 py-5 hover:border-[#FFD700] transition duration-300"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#FFD700]/10 flex items-center justify-center text-2xl"
+              >
+                🥇
+              </div>
+
+              <div>
+                <div class="flex items-center gap-3">
+                  <h4 class="text-2xl font-black">Green Elite</h4>
+
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-bold bg-[#FFD700]/20 text-[#FFD700]"
+                  >
+                    GOLD
+                  </span>
+                </div>
+
+                <p class="mt-3 text-gray-300 leading-relaxed">
+                  Sustainability champions completing eco missions consistently and inspiring the
+                  recycling community.
+                </p>
+              </div>
+            </div>
+
+            <!-- SILVER -->
+
+            <div
+              class="group flex items-start gap-5 rounded-3xl bg-black/20 border border-[#C0C0C0]/20 px-6 py-5 hover:border-[#C0C0C0] transition duration-300"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#C0C0C0]/10 flex items-center justify-center text-2xl"
+              >
+                🥈
+              </div>
+
+              <div>
+                <div class="flex items-center gap-3">
+                  <h4 class="text-2xl font-black">Green Pro</h4>
+
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-bold bg-[#C0C0C0]/20 text-[#C0C0C0]"
+                  >
+                    SILVER
+                  </span>
+                </div>
+
+                <p class="mt-3 text-gray-300 leading-relaxed">
+                  Active users contributing towards cleaner surroundings and sustainable
+                  environmental awareness.
+                </p>
+              </div>
+            </div>
+
+            <!-- BRONZE -->
+
+            <div
+              class="group flex items-start gap-5 rounded-3xl bg-black/20 border border-[#CD7F32]/20 px-6 py-5 hover:border-[#CD7F32] transition duration-300"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#CD7F32]/10 flex items-center justify-center text-2xl"
+              >
+                🥉
+              </div>
+
+              <div>
+                <div class="flex items-center gap-3">
+                  <h4 class="text-2xl font-black">Green Rookie</h4>
+
+                  <span
+                    class="px-3 py-1 rounded-full text-xs font-bold bg-[#CD7F32]/20 text-[#CD7F32]"
+                  >
+                    BRONZE
+                  </span>
+                </div>
+
+                <p class="mt-3 text-gray-300 leading-relaxed">
+                  Community members participating in sustainability activities and helping build a
+                  greener future.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
