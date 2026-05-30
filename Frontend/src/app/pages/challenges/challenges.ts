@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Challenge as ChallengeService } from '../../services/challenge';
+// import {
+//   RouterLink,
+//   RouterLinkActive
+// } from '@angular/router';
 
 @Component({
   selector: 'app-challenges',
@@ -10,7 +13,7 @@ import { Challenge as ChallengeService } from '../../services/challenge';
   templateUrl: './challenges.html',
   styleUrls: ['./challenges.css'],
 })
-export class Challenges implements OnInit {
+export class Challenges {
   scrollToTop(){
 
   window.scrollTo({
@@ -55,46 +58,102 @@ export class Challenges implements OnInit {
 
   popupMessage = '';
 
-  progressiveChallenges: any[] = [];
-  dailyChallenges: any[] = [];
-
-  constructor(private challengeService: ChallengeService) {
+  constructor() {
     const randomIndex = Math.floor(Math.random() * this.randomQuotes.length);
 
     this.randomQuote = this.randomQuotes[randomIndex];
   }
 
-  ngOnInit(): void {
-    this.loadChallenges();
-    
-    // Load initial user stats
-    const userProfileStr = localStorage.getItem('userProfile');
-    if (userProfileStr) {
-      const userProfile = JSON.parse(userProfileStr);
-      // Wait, we need to get updated points/progress.
-      // But we will update it when challenges are completed.
-    }
-  }
+  progressiveChallenges = [
+    {
+      title: 'Recycle 5 Plastic Items',
+      description: 'Upload and recycle plastic waste items correctly.',
+      points: 5,
+      current: 0,
+      total: 5,
+      progress: 0,
+    },
 
-  loadChallenges() {
-    this.challengeService.getChallenges().subscribe({
-      next: (data) => {
-        // Here we map backend challenges to frontend structure
-        this.progressiveChallenges = data.filter((c: any) => c.type === 'progressive').map((c: any) => ({
-            ...c,
-            current: 0,
-            total: c.total_goal || 5,
-            progress: 0
-        }));
-        
-        this.dailyChallenges = data.filter((c: any) => c.type === 'daily').map((c: any) => ({
-            ...c,
-            completed: false
-        }));
-      },
-      error: (err) => console.error(err)
-    });
-  }
+    {
+      title: 'Visit 1 Recycling Center',
+      description: 'Check-in at a nearby eco recycling center.',
+      points: 10,
+      current: 0,
+      total: 1,
+      progress: 0,
+    },
+
+    {
+      title: 'Recycle 10 Plastic Items',
+      description: 'Continue your plastic recycling streak.',
+      points: 15,
+      current: 0,
+      total: 10,
+      progress: 0,
+    },
+
+    {
+      title: 'Recycle 20 Paper/Cardboard Items',
+      description: 'Segregate and recycle paper waste.',
+      points: 20,
+      current: 0,
+      total: 20,
+      progress: 0,
+    },
+
+    {
+      title: 'Upload 15 Organic Waste Classification',
+      description: 'Use AI organic waste classification correctly.',
+      points: 25,
+      current: 0,
+      total: 15,
+      progress: 0,
+    },
+  ];
+
+  dailyChallenges = [
+    {
+      difficulty: 'Easy',
+      title: 'Carry a Reusable Bottle',
+      points: 10,
+      completed: false,
+    },
+
+    {
+      difficulty: 'Easy',
+      title: 'Avoid Single-Use Plastic',
+      points: 10,
+      completed: false,
+    },
+
+    {
+      difficulty: 'Medium',
+      title: 'Plant One Small Seed',
+      points: 50,
+      completed: false,
+    },
+
+    {
+      difficulty: 'Medium',
+      title: 'Avoid Food Waste Today',
+      points: 50,
+      completed: false,
+    },
+
+    {
+      difficulty: 'Hard',
+      title: 'Spend a Day Without Plastic Bags',
+      points: 100,
+      completed: false,
+    },
+
+    {
+      difficulty: 'Hard',
+      title: 'Teach Someone Waste Segregation',
+      points: 100,
+      completed: false,
+    },
+  ];
 
   addProgress(challenge: any) {
     if (challenge.current < challenge.total) {
@@ -105,18 +164,11 @@ export class Challenges implements OnInit {
       this.updateOverallProgress();
 
       if (challenge.progress === 100) {
-        
-        // Call backend to update progress
-        this.challengeService.updateProgress(challenge._id).subscribe({
-          next: (res) => {
-            this.totalPoints = res.totalPoints;
-            this.ecoProgress = res.ecoProgress;
-            this.popupMessage = `${challenge.title} Completed! +${challenge.points} pts`;
-            this.triggerPopup();
-          },
-          error: (err) => console.error(err)
-        });
+        this.totalPoints += challenge.points;
 
+        this.popupMessage = `${challenge.title} Completed! +${challenge.points} pts`;
+
+        this.triggerPopup();
       }
     }
   }
@@ -125,17 +177,13 @@ export class Challenges implements OnInit {
     if (!task.completed) {
       task.completed = true;
 
+      this.totalPoints += task.points;
+
       this.updateOverallProgress();
 
-      this.challengeService.updateProgress(task._id).subscribe({
-          next: (res) => {
-              this.totalPoints = res.totalPoints;
-              this.ecoProgress = res.ecoProgress;
-              this.popupMessage = `${task.title} Completed! +${task.points} pts`;
-              this.triggerPopup();
-          },
-          error: (err) => console.error(err)
-      });
+      this.popupMessage = `${task.title} Completed! +${task.points} pts`;
+
+      this.triggerPopup();
     }
   }
 
@@ -150,10 +198,7 @@ export class Challenges implements OnInit {
 
     const totalChallenges = this.progressiveChallenges.length + this.dailyChallenges.length;
 
-    // This is a local visual update, backend provides actual ecoProgress upon completion
-    if (totalChallenges > 0) {
-        this.ecoProgress = Math.floor((totalCompleted / totalChallenges) * 100);
-    }
+    this.ecoProgress = Math.floor((totalCompleted / totalChallenges) * 100);
   }
 
   triggerPopup() {

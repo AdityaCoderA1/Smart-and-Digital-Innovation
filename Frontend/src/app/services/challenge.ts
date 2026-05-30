@@ -1,24 +1,27 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Auth } from './auth';
+
+const BASE_URL = 'http://localhost:5000/api/challenges';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Challenge {
-  private apiUrl = 'http://localhost:5000/api/challenges';
+  constructor(private http: HttpClient, private authService: Auth) {}
 
-  constructor(private http: HttpClient, private auth: Auth) {}
-
-  getChallenges(): Observable<any> {
-    return this.http.get(this.apiUrl);
+  // ── Get All Challenges ────────────────────────────────────────────────────
+  getChallenges(): Observable<any[]> {
+    return this.http.get<any[]>(`${BASE_URL}`);
   }
 
+  // ── Update User Progress ──────────────────────────────────────────────────
   updateProgress(challengeId: string): Observable<any> {
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.auth.getToken()}`
-    });
-    return this.http.post(`${this.apiUrl}/progress`, { challengeId }, { headers });
+    return this.http.post(
+      `${BASE_URL}/progress`,
+      { challengeId },
+      { headers: this.authService.getAuthHeaders() }
+    );
   }
 }

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { UserService } from '../../services/user';
+import { Router } from '@angular/router';
+// import {
+//   RouterLink,
+//   RouterLinkActive
+// } from '@angular/router';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -11,6 +15,13 @@ import { UserService } from '../../services/user';
   styleUrls: ['./user-dashboard.css'],
 })
 export class UserDashboardComponent implements OnInit {
+  constructor(private router: Router) {}
+
+  goToHome() {
+
+    this.router.navigate(['/']);
+
+  }
   currentSection = '';
 
   scrollToSection(sectionId: string, sectionName: string) {
@@ -30,6 +41,18 @@ export class UserDashboardComponent implements OnInit {
 
   username: string = 'Guest';
   greeting: string = '';
+
+  randomNames: string[] = [
+    'Captain Compost',
+    'Bin Ninja',
+    'Trash Panda',
+    'Garbage Guru',
+    'Eco Champ',
+    'Planet Saver',
+    'Dustbin Hero',
+    'Recycle Ranger',
+    'Green Knight',
+  ];
 
   stats = {
     uploaded: 0,
@@ -56,11 +79,13 @@ export class UserDashboardComponent implements OnInit {
 
   leaderboard: any[] = [];
 
-  constructor(private userService: UserService) {}
-
   ngOnInit(): void {
+    const randomIndex = Math.floor(Math.random() * this.randomNames.length);
+
+    this.username = this.randomNames[randomIndex];
+
     this.setGreeting();
-    this.loadUserProfile();
+
     this.loadLeaderboard();
   }
 
@@ -78,60 +103,29 @@ export class UserDashboardComponent implements OnInit {
     }
   }
 
-  loadUserProfile(): void {
-    const cachedProfile = localStorage.getItem('userProfile');
-    if (cachedProfile) {
-        try {
-            const parsed = JSON.parse(cachedProfile);
-            if (parsed.username) {
-                this.username = parsed.username;
-            }
-        } catch(e) {}
-    }
-
-    this.userService.getProfile().subscribe({
-      next: (profile) => {
-        this.username = profile.username;
-        this.stats = {
-            uploaded: profile.stats?.uploaded || 0,
-            detections: profile.stats?.detections || 0,
-            challenges: profile.stats?.challenges || 0,
-            trips: profile.stats?.trips || 0,
-        };
-        
-        if (profile.wasteDistribution && profile.wasteDistribution.length > 0) {
-            this.wasteDistribution = profile.wasteDistribution;
-        }
-      },
-      error: (err) => {
-        console.error('Failed to load profile', err);
-      }
-    });
-  }
-
   loadLeaderboard(): void {
-    this.userService.getLeaderboard().subscribe({
-      next: (data) => {
-        this.leaderboard = data.map((user: any, index: number) => {
-            let badge = 'Bronze Badge';
-            let role = 'Green Rookie';
-            let medal = '🥉';
-            if (index === 0) { badge = 'Gold Badge'; role = 'Green Elite'; medal = '🥇'; }
-            else if (index === 1) { badge = 'Silver Badge'; role = 'Green Pro'; medal = '🥈'; }
-            
-            return {
-                name: user.username,
-                badge,
-                role,
-                medal,
-                points: user.totalPoints
-            };
-        });
+    this.leaderboard = [
+      {
+        name: 'GreenAlex',
+        badge: 'Gold Badge',
+        role: 'Green Elite',
+        medal: '🥇',
       },
-      error: (err) => {
-        console.error('Failed to load leaderboard', err);
-      }
-    });
+
+      {
+        name: 'SilverSam',
+        badge: 'Silver Badge',
+        role: 'Green Pro',
+        medal: '🥈',
+      },
+
+      {
+        name: 'BronzeBee',
+        badge: 'Bronze Badge',
+        role: 'Green Rookie',
+        medal: '🥉',
+      },
+    ];
   }
 
   addUserToLeaderboard(user: any): void {

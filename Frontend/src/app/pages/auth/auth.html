@@ -105,21 +105,15 @@
         </div>
       </div>
 
-      <!-- ERROR MESSAGE -->
-      <div *ngIf="errorMessage" class="mt-6 p-3 rounded-xl bg-red-500/20 border border-red-500/50 text-red-200 text-sm text-center font-medium shadow-sm">
-        {{ errorMessage }}
-      </div>
-
       <!-- FORM -->
-      <div class="mt-6">
+      <div class="mt-8">
         <!-- REGISTER -->
         <div *ngIf="!isLogin">
           <div>
-            <label class="text-base">Username</label>
+            <label class="text-base">Full Name</label>
 
             <input
               type="text"
-              [(ngModel)]="username"
               placeholder="Jane Green"
               class="w-full mt-2 bg-white/10 border border-white/10 rounded-2xl px-5 py-3 outline-none text-lg"
             />
@@ -128,12 +122,13 @@
 
         <!-- EMAIL -->
         <div class="mt-5">
-          <label class="text-base">Email</label>
+          <label class="text-base">
+            {{ isLogin ? 'Username' : 'Email' }}
+          </label>
 
           <input
-            type="email"
-            [(ngModel)]="email"
-            placeholder="you@ecotech.com"
+            [type]="isLogin ? 'text' : 'email'"
+            [placeholder]="isLogin ? 'Enter username' : 'you@ecotech.com'"
             class="w-full mt-2 bg-white/10 border border-white/10 rounded-2xl px-5 py-3 outline-none text-lg"
           />
         </div>
@@ -144,7 +139,6 @@
 
           <input
             type="password"
-            [(ngModel)]="password"
             (input)="checkStrength($event)"
             placeholder="Enter password"
             class="w-full mt-2 bg-white/10 border border-white/10 rounded-2xl px-5 py-3 outline-none text-lg"

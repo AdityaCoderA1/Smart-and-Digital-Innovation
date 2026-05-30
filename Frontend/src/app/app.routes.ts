@@ -9,9 +9,6 @@ import { Challenges } from './pages/challenges/challenges';
 
 import { RecyclingCenters } from './pages/recycling-centers/recycling-centers';
 
-import { Upload } from './pages/upload/upload';
-import { AdminDashboard } from './pages/admin-dashboard/admin-dashboard';
-
 export const routes: Routes = [
 
   {
@@ -37,16 +34,6 @@ export const routes: Routes = [
   {
     path: 'recycling-centers',
     component: RecyclingCenters
-  },
-
-  {
-    path: 'upload',
-    component: Upload
-  },
-
-  {
-    path: 'admin-dashboard',
-    component: AdminDashboard
   },
 
   {

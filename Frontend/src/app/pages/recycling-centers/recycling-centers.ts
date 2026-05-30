@@ -2,22 +2,55 @@ import { Component, OnInit } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 
+import { FormsModule } from '@angular/forms';
+
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import * as L from 'leaflet';
-import { Maps } from '../../services/maps';
+
 @Component({
   selector: 'app-recycling-centers',
 
   standalone: true,
 
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterLink, RouterLinkActive, FormsModule],
 
   templateUrl: './recycling-centers.html',
 
   styleUrl: './recycling-centers.css',
 })
 export class RecyclingCenters implements OnInit {
+collectorName = '';
+collectorLocation = '';
+collectorCategory = '';
+collectorContact = '';
+collectorDescription = '';
+showSubmitPopup = false;
+
+  submitCollectorForm() {
+
+  this.showSubmitPopup = true;
+
+  // RESET FORM VALUES
+
+  this.collectorName = '';
+
+  this.collectorLocation = '';
+
+  this.collectorCategory = '';
+
+  this.collectorContact = '';
+
+  this.collectorDescription = '';
+
+  // HIDE POPUP AFTER 3 SEC
+
+  setTimeout(() => {
+
+    this.showSubmitPopup = false;
+
+  }, 3000);
+}
   scrollToNearby() {
     const section = document.getElementById('nearby-centers-section');
 
@@ -99,25 +132,78 @@ export class RecyclingCenters implements OnInit {
   // CENTER CARDS
   // ===================================
 
-  centers: any[] = [];
+  centers = [
+    {
+      name: 'EcoDrop Center',
 
-  constructor(private mapsService: Maps) {}
+      type: 'E-Waste',
+
+      distance: 'Enable GPS',
+
+      lat: 28.6139,
+
+      lng: 77.209,
+
+      description: 'Electronic and battery waste collection center.',
+
+      items: ['Batteries', 'Phones', 'Electronics'],
+    },
+
+    {
+      name: 'Green Earth Recycling',
+
+      type: 'Plastic',
+
+      distance: 'Enable GPS',
+
+      lat: 19.076,
+
+      lng: 72.8777,
+
+      description: 'Plastic, cardboard and metal recycling.',
+
+      items: ['Plastic', 'Paper', 'Metal'],
+    },
+
+    {
+      name: 'NatureCycle Hub',
+
+      type: 'Organic',
+
+      distance: 'Enable GPS',
+
+      lat: 13.0827,
+
+      lng: 80.2707,
+
+      description: 'Organic compost and food waste center.',
+
+      items: ['Organic', 'Compost', 'Food Waste'],
+    },
+
+    {
+      name: 'ScrapSmart Dealer',
+
+      type: 'Scrap',
+
+      distance: 'Enable GPS',
+
+      lat: 22.5726,
+
+      lng: 88.3639,
+
+      description: 'Local scrap collection and reuse facility.',
+
+      items: ['Iron', 'Steel', 'Scrap'],
+    },
+  ];
 
   // ===================================
   // INIT
   // ===================================
 
   ngOnInit() {
-    this.mapsService.getCenters().subscribe({
-        next: (data) => {
-            this.centers = data.map((c: any) => ({
-                ...c,
-                distance: 'Enable GPS'
-            }));
-            this.initMap();
-        },
-        error: (err) => console.error(err)
-    });
+    this.initMap();
 
     navigator.permissions
       .query({

@@ -1,33 +1,56 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+const BASE_URL = 'http://localhost:5000/api/auth';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Auth {
-  private apiUrl = 'http://localhost:5000/api/auth';
-
   constructor(private http: HttpClient) {}
 
-  register(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, userData);
+  // ── Register ──────────────────────────────────────────────────────────────
+  register(username: string, email: string, password: string): Observable<any> {
+    return this.http.post(`${BASE_URL}/register`, { username, email, password });
   }
 
-  login(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, userData);
+  // ── Login ─────────────────────────────────────────────────────────────────
+  login(email: string, password: string): Observable<any> {
+    return this.http.post(`${BASE_URL}/login`, { email, password });
   }
 
-  logout() {
-    localStorage.removeItem('userToken');
-    localStorage.removeItem('userProfile');
+  // ── Token Helpers ─────────────────────────────────────────────────────────
+  saveToken(token: string): void {
+    localStorage.setItem('gl_token', token);
   }
 
-  getToken() {
-    return localStorage.getItem('userToken');
+  getToken(): string | null {
+    return localStorage.getItem('gl_token');
   }
 
-  isLoggedIn() {
+  saveUser(user: any): void {
+    localStorage.setItem('gl_user', JSON.stringify(user));
+  }
+
+  getUser(): any {
+    const user = localStorage.getItem('gl_user');
+    return user ? JSON.parse(user) : null;
+  }
+
+  isLoggedIn(): boolean {
     return !!this.getToken();
+  }
+
+  logout(): void {
+    localStorage.removeItem('gl_token');
+    localStorage.removeItem('gl_user');
+  }
+
+  // ── Auth Header Helper ────────────────────────────────────────────────────
+  getAuthHeaders(): HttpHeaders {
+    return new HttpHeaders({
+      Authorization: `Bearer ${this.getToken()}`,
+    });
   }
 }

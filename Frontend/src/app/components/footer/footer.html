@@ -1,13 +1,9 @@
 <footer
   class="
     relative
-
     overflow-hidden
-
     bg-[#03110F]
-
     border-t border-white/10
-
     px-6
     pt-14
     pb-6
@@ -21,17 +17,12 @@
       absolute
       top-1/2
       left-1/2
-
       -translate-x-1/2
       -translate-y-1/2
-
       w-[700px]
       h-[700px]
-
       rounded-full
-
       bg-[#2FA084]/10
-
       blur-[140px]
     "
   ></div>
@@ -44,262 +35,351 @@
       class="
         grid
         lg:grid-cols-4
-
         gap-10
       "
     >
 
-      <!-- BRAND -->
+<!-- BRAND -->
 
-      <div>
+<div>
 
-        <div class="flex items-center gap-4">
+    <div class="flex items-center gap-3">
 
-          <div
-            class="
-              w-14
-              h-14
+        <div
+          class="
+            w-12
+            h-12
+            rounded-xl
+            overflow-hidden
+            bg-gradient-to-br
+            from-[#2FA084]
+            to-[#6FCF97]
+          "
+        >
 
-              rounded-2xl
+            <img
+              src="images/logo.png"
 
-              bg-gradient-to-br
-              from-[#2FA084]
-              to-[#6FCF97]
+              class="
+                w-full
+                h-full
+                object-cover
+              "
+            >
 
-              flex
-              items-center
-              justify-center
+        </div>
 
-              text-2xl
-            "
-          >
-            ♻️
-          </div>
-
-          <div>
+        <div>
 
             <h2 class="
-              text-2xl
+              text-3xl
               font-black
             ">
               GreenLoop
             </h2>
 
             <p class="
-              text-xs
+              text-[11px]
               text-[#6FCF97]
-              tracking-[3px]
+              tracking-[4px]
             ">
               SMART RECYCLING
             </p>
 
-          </div>
-
         </div>
 
-        <p class="
-          mt-5
+    </div>
 
-          text-gray-400
-          text-sm
-          leading-relaxed
+    <p class="
+      mt-5
+      text-gray-400
+      text-sm
+      leading-relaxed
+      max-w-xs
+    ">
 
-          max-w-xs
-        ">
+      AI-powered smart recycling
+      platform promoting sustainability
+      and eco-friendly communities.
 
-          AI-powered smart recycling
-          platform promoting sustainability
-          and eco-friendly communities.
+    </p>
 
-        </p>
+</div>
 
-      </div>
+<!-- QUICK LINKS -->
 
-      <!-- LINKS -->
+<div>
 
-      <div>
+    <h3 class="
+      text-lg
+      font-bold
+    ">
+      Quick Links
+    </h3>
 
-        <h3 class="
-          text-lg
-          font-bold
-        ">
-          Quick Links
-        </h3>
+    <div class="
+      mt-5
+      flex
+      flex-col
+      gap-4
+    ">
 
-        <div class="
-          mt-5
+      <!-- HOME -->
 
-          flex
-          flex-col
+      <a
+        href="#top-section"
 
-          gap-3
-        ">
-
-          <a
-            routerLink="/"
-            class="
-              text-sm
-              text-gray-400
-              hover:text-[#6FCF97]
-
-              transition duration-300
-            "
-          >
-            Home
-          </a>
-
-          <a
-            routerLink="/upload"
-            class="
-              text-sm
-              text-gray-400
-              hover:text-[#6FCF97]
-
-              transition duration-300
-            "
-          >
-            Upload Waste
-          </a>
-
-          <a
-            routerLink="/dashboard"
-            class="
-              text-sm
-              text-gray-400
-              hover:text-[#6FCF97]
-
-              transition duration-300
-            "
-          >
-            Dashboard
-          </a>
-
-        </div>
-
-      </div>
-
-      <!-- FEATURES -->
-
-      <div>
-
-        <h3 class="
-          text-lg
-          font-bold
-        ">
-          Features
-        </h3>
-
-        <div class="
-          mt-5
-
-          flex
-          flex-col
-
-          gap-3
-        ">
-
-          <p class="
-            text-sm
-            text-gray-400
-          ">
-            AI Waste Detection
-          </p>
-
-          <p class="
-            text-sm
-            text-gray-400
-          ">
-            Smart Analytics
-          </p>
-
-          <p class="
-            text-sm
-            text-gray-400
-          ">
-            Eco Challenges
-          </p>
-
-        </div>
-
-      </div>
-
-      <!-- CONNECT -->
-
-      <div>
-
-        <h3 class="
-          text-lg
-          font-bold
-        ">
-          Connect
-        </h3>
-
-        <p class="
-          mt-5
-
+        class="
           text-sm
           text-gray-400
-          leading-relaxed
-        ">
+          hover:text-[#6FCF97]
+          transition duration-300
+          cursor-pointer
+        "
+      >
+        Home
+      </a>
 
-          Join the sustainability
-          movement and build a
-          greener future.
+      <!-- LOGIN -->
 
-        </p>
+      <a
+        routerLink="/auth"
 
-        <!-- SOCIAL -->
+        class="
+          text-sm
+          text-gray-400
+          hover:text-[#6FCF97]
+          transition duration-300
+          cursor-pointer
+        "
+      >
+        Upload Waste
+      </a>
 
-        <div class="
-          mt-6
+      <!-- DASHBOARD -->
 
-          flex
-          gap-3
-        ">
+      <a
+        routerLink="/auth"
 
-          <button
-            class="
-              w-12
-              h-12
+        class="
+          text-sm
+          text-gray-400
+          hover:text-[#6FCF97]
+          transition duration-300
+          cursor-pointer
+        "
+      >
+        Dashboard
+      </a>
 
-              rounded-2xl
+    </div>
 
-              bg-white/5
+</div>
 
-              border border-white/10
+<!-- FEATURES -->
 
-              hover:border-[#2FA084]
-              hover:-translate-y-1
+<div>
 
-              transition duration-300
-            "
-          >
-            🌍
-          </button>
+    <h3 class="
+      text-lg
+      font-bold
+    ">
+      Features
+    </h3>
 
-          <button
-            class="
-              w-12
-              h-12
+    <div class="
+      mt-5
+      flex
+      flex-col
+      gap-4
+    ">
 
-              rounded-2xl
+      <p class="
+        text-sm
+        text-gray-400
+      ">
+        AI Waste Detection
+      </p>
 
-              bg-white/5
+      <p class="
+        text-sm
+        text-gray-400
+      ">
+        Smart Analytics
+      </p>
 
-              border border-white/10
+      <p class="
+        text-sm
+        text-gray-400
+      ">
+        Eco Challenges
+      </p>
 
-              hover:border-[#6FCF97]
-              hover:-translate-y-1
+    </div>
 
-              transition duration-300
-            "
-          >
-            📧
-          </button>
+</div>
 
-        </div>
+<!-- CONNECT -->
 
-      </div>
+<div>
+
+    <h3 class="
+      text-lg
+      font-bold
+    ">
+      Connect
+    </h3>
+
+    <p class="
+      mt-5
+      text-sm
+      text-gray-400
+      leading-relaxed
+    ">
+
+      Join the sustainability
+      movement and build a
+      greener future.
+
+    </p>
+
+<!-- ROW 1 -->
+
+<div class="flex items-center gap-3 mt-6">
+
+    <p class="
+      text-sm
+      font-semibold
+      text-[#6FCF97]
+      w-[55px]
+    ">
+      Aditya
+    </p>
+
+    <!-- ICONS -->
+
+<a
+href="#"
+target="_blank">
+
+    <div class="social-btn">
+        <img
+        src="images/github.png"
+
+        class="social-icon invert">
+    </div>
+
+</a>
+
+<a
+href="https://wa.me/919999999999"
+target="_blank">
+
+    <div class="social-btn">
+        <img
+        src="images/whatsapp.png"
+
+        class="social-icon">
+    </div>
+
+</a>
+
+<a
+href="#"
+target="_blank">
+
+    <div class="social-btn">
+        <img
+        src="images/linkedin.png"
+
+        class="social-icon">
+    </div>
+
+</a>
+
+<a
+href="mailto:yourmail@gmail.com"
+target="_blank">
+
+    <div class="social-btn">
+        <img
+        src="images/gmail.png"
+
+        class="social-icon">
+    </div>
+
+</a>
+
+</div>
+
+<!-- ROW 2 -->
+
+<div class="flex items-center gap-3 mt-3">
+
+    <p class="
+      text-sm
+      font-semibold
+      text-[#6FCF97]
+      w-[55px]
+    ">
+      Dweep
+    </p>
+
+<a
+href="https://github.com/ShadProgrammer"
+target="_blank">
+
+    <div class="social-btn">
+        <img
+        src="images/github.png"
+
+        class="social-icon invert">
+    </div>
+
+</a>
+
+<a
+href="https://wa.me/8160558436"
+target="_blank">
+
+    <div class="social-btn">
+        <img
+        src="images/whatsapp.png"
+
+        class="social-icon">
+    </div>
+
+</a>
+
+<a
+href="https://linkedin.com/in/dweep-bariya-286782324"
+target="_blank">
+
+    <div class="social-btn">
+        <img
+        src="images/linkedin.png"
+
+        class="social-icon">
+    </div>
+
+</a>
+
+<a
+href="mailto:dweepbariya2006@gmail.com"
+target="_blank">
+
+    <div class="social-btn">
+        <img
+        src="images/gmail.png"
+
+        class="social-icon">
+    </div>
+
+</a>
+
+</div>
+
+</div>
 
     </div>
 
@@ -309,16 +389,12 @@
       class="
         mt-12
         pt-6
-
         border-t border-white/10
-
         flex
         flex-col
         lg:flex-row
-
         items-center
         justify-between
-
         gap-4
       "
     >
